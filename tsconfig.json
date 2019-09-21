@@ -1,0 +1,24 @@
+{
+  "compilerOptions": {
+    "target": "es6",
+    "esModuleInterop": true,
+    "module": "commonjs",
+    "noImplicitAny": true,
+    "moduleResolution": "node",
+    "sourceMap": true,
+    "declaration": true,
+    "outDir": "./dist",
+    "baseUrl": ".",
+    "strict": true,
+    "pretty": true,
+    "lib": ["es2015", "es2016", "dom", "es2017", "es6", "es5"]
+  },
+  "include": ["src/**/*.ts"],
+  "exclude": [
+    ".env",
+    "node_modules",
+    "/tests",
+    "**/__mocks__/*",
+    "jest.config.js"
+  ]
+}

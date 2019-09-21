@@ -1,0 +1,53 @@
+/email:
+  post:
+    description: Sends an email
+    produces:
+      - application/json
+    requestBody:
+      required: true
+      description: Email to send
+      content:
+        'application/json':
+          schema:
+            properties:
+              to:
+                type: string
+              to_name:
+                type: string
+              from:
+                type: string
+              from_name:
+                type: string
+              subject:
+                type: string
+              body:
+                type: string
+    responses:
+      '200':
+        description: Email successfully sent
+        content:
+          'application/json':
+            schema:
+              $ref: '#/components/schemas/Response'
+      '400':
+        description: The requests does not pass validation checks
+        content:
+          'application/json':
+            schema:
+              $ref: '#/components/schemas/Response'
+      '500':
+        description: The server is unable to process the request
+        content:
+          'application/json':
+            schema:
+              $ref: '#/components/schemas/Response'
+
+components:
+  schemas:
+    Response:
+      type: object
+      properties:
+        status:
+          type: string
+        message:
+          type: string
